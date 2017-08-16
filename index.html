@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html ng-app="amanda">
+  <head>
+    <meta charset="utf-8">
+    <title>Amanda</title>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="top" ng-controller="AmandaController">
+      <div class="welcome">
+        <p>Olá, eu sou a Amanda!<br>A personal shopper da Amaro.<br>Qual seu nome?</p>
+        <p>{{categoria}}</p>
+        <!-- Botão para testar o ng-click  -->
+        <button type="button" name="button" ng-click="irCat()">Teste</button>
+      </div>
+      <div class="categoria" ng-show="categoria">
+        <p>É um prazer, {{nome}}.<br>Que tipo de produtos você está buscando hoje?</p>
+      </div>
+      <div class="lista-roupas" ng-show="catRoupas">
+        <p>Tudo bem. Que tipo de roupas você procura?</p>
+      </div>
+      <div class="lista-sapatos" ng-show="catSapatos">
+        <p>Tudo bem. Que tipo de sapatos você procura?</p>
+      </div>
+      <div class="lista-acessórios" ng-show="catAcessorios">
+        <p>Tudo bem. Que tipo de acessórios você procura?</p>
+      </div>
+      <div class="cor-roupas" ng-show="corRoupas">
+        <p>Entendi. E de que cor você gostaria?</p>
+      </div>
+      <div class="cor-sapatos" ng-show="corSapatos">
+        <p>Entendi. E de que cor você gostaria?</p>
+      </div>
+      <div class="cor-acessórios" ng-show="corAcessorios">
+        <p>Entendi. E de que cor você gostaria?</p>
+      </div>
+      <div class="tamanho-roupas" ng-show="tamRoupas">
+        <p>Anotado. E que tamanho você veste?</p>
+      </div>
+      <div class="tamanho-sapatos" ng-show="tamSapatos">
+        <p>Anotado. E quanto você calça?</p>
+      </div>
+      <div class="tamanho-acessórios" ng-show="tamAcessorios">
+        <p>Anotado. E que tamanho você veste?</p>
+      </div>
+      <div class="resultado" ng-show="result">
+        <p>Tudo pronto, {{nome}}. Aqui está o resultado da sua busca:</p>
+      </div>
+    <!-- </div> -->
+
+    <!-- <div class="bottom"> -->
+      <div class="wel">
+        <form class="" ng-submit="irCat()">
+        <input type="text" placeholder="Digite seu nome" ng-model="dados.nome">
+        <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="cat" ng-show="listCat">
+        <button type="button" name="button">Roupas</button>
+        <button type="button" name="button">Sapatos</button>
+        <button type="button" name="button">Acessórios</button>
+      </div>
+      <div class="l-r" ng-show="listRoupas">
+        <form action="">
+          <input type="checkbox" name="roupas" value="blazer">Blazer
+          <input type="checkbox" name="roupas" value="blusa">Blusa
+          <input type="checkbox" name="roupas" value="calca">Calça<br>
+          <input type="checkbox" name="roupas" value="camisa">Camisa
+          <input type="checkbox" name="roupas" value="casaco">Casaco
+          <input type="checkbox" name="roupas" value="colete">Colete<br>
+          <input type="checkbox" name="roupas" value="jaqueta">Jaqueta
+          <input type="checkbox" name="roupas" value="jeans">Jeans
+          <input type="checkbox" name="roupas" value="lingerie">Lingerie<br>
+          <input type="checkbox" name="roupas" value="regata">Regata
+          <input type="checkbox" name="roupas" value="short">Short
+          <input type="checkbox" name="roupas" value="vestido">Vestido<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="l-s" ng-show="listSapatos">
+        <form action="">
+          <input type="checkbox" name="sapatos" value="bota">Bota
+          <input type="checkbox" name="sapatos" value="rasteira">Rasteira
+          <input type="checkbox" name="sapatos" value="salto fino">Salto fino
+          <input type="checkbox" name="sapatos" value="salto grosso">Salto grosso<br>
+          <input type="checkbox" name="sapatos" value="sandalia">Sandália
+          <input type="checkbox" name="sapatos" value="sapatilha">Sapatilha
+          <input type="checkbox" name="sapatos" value="tenis">Tênis<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="l-a" ng-show="listAcessorios">
+        <form action="">
+          <input type="checkbox" name="acessorios" value="anel">Anel
+          <input type="checkbox" name="acessorios" value="bolsa flap">Bolsa flap
+          <input type="checkbox" name="acessorios" value="bolsa ombro">Bolsa ombro<br>
+          <input type="checkbox" name="acessorios" value="brinco">Brinco
+          <input type="checkbox" name="acessorios" value="chapeu">Chapéu
+          <input type="checkbox" name="acessorios" value="cinto">Cinto<br>
+          <input type="checkbox" name="acessorios" value="colar">Colar
+          <input type="checkbox" name="acessorios" value="gorro">Gorro
+          <input type="checkbox" name="acessorios" value="oculos de sol">Óculos de sol<br>
+          <input type="checkbox" name="acessorios" value="pulseira">Pulseira
+          <input type="checkbox" name="acessorios" value="tiara">Tiara<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="c-r" ng-show="colRoupas">
+        <form action="">
+          <input type="checkbox" name="cores" value="anel">Amarelo
+          <input type="checkbox" name="cores" value="bolsa flap">Azul
+          <input type="checkbox" name="cores" value="bolsa ombro">Rosa<br>
+          <input type="checkbox" name="cores" value="brinco">Roxo
+          <input type="checkbox" name="cores" value="chapeu">Vermelho<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="c-s" ng-show="colSapatos">
+        <form action="">
+          <input type="checkbox" name="cores" value="anel">Amarelo
+          <input type="checkbox" name="cores" value="bolsa flap">Azul
+          <input type="checkbox" name="cores" value="bolsa ombro">Rosa<br>
+          <input type="checkbox" name="cores" value="brinco">Roxo
+          <input type="checkbox" name="cores" value="chapeu">Vermelho<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="c-a" ng-show="colAcessorios">
+        <form action="">
+          <input type="checkbox" name="cores" value="anel">Amarelo
+          <input type="checkbox" name="cores" value="bolsa flap">Azul
+          <input type="checkbox" name="cores" value="bolsa ombro">Rosa<br>
+          <input type="checkbox" name="cores" value="brinco">Roxo
+          <input type="checkbox" name="cores" value="chapeu">Vermelho<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="t-r" ng-show="sRoupas">
+        <form action="">
+          <input type="checkbox" name="tamanhos" value="PP/36">PP/36
+          <input type="checkbox" name="tamanhos" value="P/38">P/38
+          <input type="checkbox" name="tamanhos" value="M/40">M/40<br>
+          <input type="checkbox" name="tamanhos" value="G/42">G/42
+          <input type="checkbox" name="tamanhos" value="GG/44">GG/44<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="t-s" ng-show="sSapatos">
+        <form action="">
+          <input type="checkbox" name="tamanhos" value="34">34
+          <input type="checkbox" name="tamanhos" value="35">35
+          <input type="checkbox" name="tamanhos" value="36">36<br>
+          <input type="checkbox" name="tamanhos" value="37">37
+          <input type="checkbox" name="tamanhos" value="38">38
+          <input type="checkbox" name="tamanhos" value="39">39<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+      <div class="t-a" ng-show="sAcessorios">
+        <form action="">
+          <input type="checkbox" name="tamanhos" value="P">P
+          <input type="checkbox" name="tamanhos" value="M">M
+          <input type="checkbox" name="tamanhos" value="G">G<br>
+          <input type="submit" name="Enviar" value="Enviar">
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
