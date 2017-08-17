@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html ng-app="amanda">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amanda</title>
+  <script src="./node_modules/angular/angular.min.js"></script>
+  <script src="app.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="amanda.css">
+</head>
+<body>
+  <div class="complete" ng-controller="AmandaController">
+
+    <div class="container pag">
+      <div class="row topsite">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 thisone">
+          <img src="mandy.png" alt="Amanda">
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+
+      <div class="row primeira">
+        <div class="col-md-3 teste1"></div>
+        <div class="col-md-6 teste2">
+          <div class="welcome mandy">
+            <p>Seja bem-vindo(a) à Amaro.</p>
+            <p>Eu sou a Amanda, e estou aqui para ajudar</p>
+            <p>você a encontrar exatamente o que você procura.</p>
+            <p>Qual o seu nome?<span>|</span></p>
+          </div>
+          <div class="wel trying resposta" ng-show="inicio2">
+            <p>{{nome}}</p>
+            </form>
+          </div>
+          <div class="categoria mandy" ng-show="categoria">
+            <p>Oi, {{nome}}!</p>
+            <p>Por inde vamos começar?<span>|</span></p>
+          </div>
+          <div class="cat trying resposta" ng-show="listCat2">
+            <button class="but" type="button" name="button" ng-show="cat1">Roupas</button>
+            <button class="but" type="button" name="button" ng-show="cat2">Sapatos</button>
+            <button class="but" type="button" name="button" ng-show="cat3">Acessórios</button>
+          </div>
+          <div class="lista-roupas mandy" ng-show="catRoupas">
+            <p>Perfeito! Eu tenho várias opções para você</p>
+            <p>O que está buscando hoje?<span>|</span></p>
+          </div>
+          <div class="l-r trying resposta" ng-show="listRoupas2">
+            <p>{{roupaSelecionada}}</p>
+          </div>
+          <div class="lista-sapatos mandy" ng-show="catSapatos">
+            <p>Perfeito! Eu tenho várias opções para você</p>
+            <p>O que está buscando hoje?<span>|</span></p>
+          </div>
+          <div class="l-s trying resposta" ng-show="listSapatos2">
+            <p>{{sapatoSelecionado}}</p>
+          </div>
+          <div class="lista-acessórios mandy" ng-show="catAcessorios">
+            <p>Perfeito! Eu tenho várias opções para você</p>
+            <p>O que está buscando hoje?<span>|</span></p>
+          </div>
+          <div class="l-a trying resposta" ng-show="listAcessorios2">
+            <p>{{acessorioSelecionado}}</p>
+          </div>
+          <div class="cor-roupas mandy" ng-show="corRoupas">
+            <p>Ótima escolha. De que cor você prefere?</p>
+            <p>Pode selecionar mais de uma que eu separo</p>
+            <p>para você!<span>|</span></p>
+          </div>
+          <div class="c-r trying resposta" ng-show="colRoupas2">
+            <p>{{corRoupaSelecionada}}</p>
+          </div>
+          <div class="cor-sapatos mandy" ng-show="corSapatos">
+            <p>Ótima escolha. De que cor você prefere?</p>
+            <p>Pode selecionar mais de uma que eu separo</p>
+            <p>para você!<span>|</span></p>
+          </div>
+          <div class="c-s trying resposta" ng-show="colSapatos2">
+            <p>{{corSapatoSelecionado}}</p>
+          </div>
+          <div class="cor-acessórios mandy" ng-show="corAcessorios">
+            <p>Ótima escolha. De que cor você prefere?</p>
+            <p>Pode selecionar mais de uma que eu separo</p>
+            <p>para você!<span>|</span></p>
+          </div>
+          <div class="c-a trying resposta" ng-show="colAcessorios2">
+            <p>{{corAcessorioSelecionado}}</p>
+          </div>
+          <div class="tamanho-roupas mandy" ng-show="tamRoupas">
+            <p>Já estamos quase lá. Para eu acertar</p>
+            <p>nas opções, qual tamanho você veste?<span>|</span></p>
+          </div>
+          <div class="t-r trying resposta" ng-show="sRoupas2">
+            <p>{{tamRoupaSelecionada}}</p>
+          </div>
+          <div class="tamanho-sapatos mandy" ng-show="tamSapatos">
+            <p>Já estamos quase lá. Para eu acertar</p>
+            <p>nas opções, qual tamanho você calça?<span>|</span></p>
+          </div>
+          <div class="t-s trying resposta" ng-show="sSapatos2">
+            <p>{{tamSapatoSelecionado}}</p>
+          </div>
+          <div class="tamanho-acessórios mandy" ng-show="tamAcessorios">
+            <p>Já estamos quase lá. Para eu acertar</p>
+            <p>nas opções, qual tamanho você usa?<span>|</span></p>
+          </div>
+          <div class="t-a trying resposta" ng-show="sAcessorios2">
+            <p>{{tamAcessorioSelecionado}}</p>
+          </div>
+          <div class="resultado mandy" ng-show="result">
+            <p>Tudo pronto, {{nome}}.</p>
+            <p>Agora já pode conferir as peças que eu separei</p>
+            <p>e escolher as suas favoritas...<span>|</span></p>
+          </div>
+          <!-- </div> -->
+
+          <!-- <div class="bottom"> -->
+
+        </div>
+        <div class="col-md-3 teste3"></div>
+      </div>
+      <div class="row irsite">
+        <div class="col-md-3 teste4"></div>
+        <div class="col-md-6 teste5" align="center">
+          <div class="wel trying" ng-show="inicio">
+            <form class="" ng-submit="irCat()">
+              <input class="name" type="text" placeholder="Digite seu nome" ng-model="nome">
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+          <div class="cat trying" ng-show="listCat">
+            <button class="but" type="button" name="button" ng-click="irRou()">Roupas</button>
+            <button class="but" type="button" name="button" ng-click="irSap()">Sapatos</button>
+            <button class="but" type="button" name="button" ng-click="irAce()">Acessórios</button>
+          </div>
+          <div class="l-r trying" ng-show="listRoupas">
+            <form class="flexando" ng-submit="selRou()">
+              <button class="btn" type="button" name="button" ng-click="selectRou('Blazer ')">Blazer</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Blusa ')">Blusa</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Calca ')">Calça</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Camisa ')">Camisa</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Casaco ')">Casaco</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Colete ')">Colete</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Jaqueta ')">Jaqueta</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Jeans ')">Jeans</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Lingerie ')">Lingerie</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Regata ')">Regata</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Short ')">Short</button>
+              <button class="btn" type="button" name="button" ng-click="selectRou('Vestido ')">Vestido</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar" ng-model="roupas">
+            </form>
+          </div>
+          <div class="l-s trying" ng-show="listSapatos">
+            <form class="flexando" ng-submit="selSap()">
+              <button class="btn" type="button" name="button"  ng-click="selectSap('Bota ')">Bota</button>
+              <button class="btn" type="button" name="button" ng-click="selectSap('Rasteira ')">Rasteira</button>
+              <button class="btn" type="button" name="button" ng-click="selectSap('Salto fino ')">Salto fino</button>
+              <button class="btn" type="button" name="button" ng-click="selectSap('Salto grosso ')">Salto grosso</button>
+              <button class="btn" type="button" name="button" ng-click="selectSap('Sandalia ')">Sandália</button>
+              <button class="btn" type="button" name="button" ng-click="selectSap('Sapatilha ')">Sapatilha</button>
+              <button class="btn" type="button" name="button" ng-click="selectSap('Tenis ')">Tênis</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar"ng-model="sapatos">
+            </form>
+          </div>
+          <div class="l-a trying" ng-show="listAcessorios">
+            <form class="flexando" ng-submit="selAce()">
+              <button class="btn" type="button" name="button" ng-click="selectAce('Anel ')">Anel</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Bolsa flap ')">Bolsa flap</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Bolsa ombro ')">Bolsa ombro</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Brinco ')">Brinco</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Chapeu ')">Chapéu</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Cinto ')">Cinto</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Colar ')">Colar</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Gorro ')">Gorro</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Oculos de sol ')">Óculos de sol</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Pulseira ')">Pulseira</button>
+              <button class="btn" type="button" name="button" ng-click="selectAce('Tiara ')">Tiara</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar" ng-model="Acessorios ">
+            </form>
+          </div>
+          <div class="c-r trying" ng-show="colRoupas">
+            <form class="flexando" ng-submit="selCorRou()">
+              <button class="btn" type="button" name="cores" ng-click="selectRou('Amarelo ')">Amarelo</button>
+              <button class="btn" type="button" name="cores" ng-click="selectRou('Azul ')">Azul</button>
+              <button class="btn" type="button" name="cores" ng-click="selectRou('Rosa ')">Rosa</button>
+              <button class="btn" type="button" name="cores" ng-click="selectRou('Roxo ')">Roxo</button>
+              <button class="btn" type="button" name="cores" ng-click="selectRou('Vermelho ')">Vermelho</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+          <div class="c-s trying" ng-show="colSapatos">
+            <form class="flexando" ng-submit="selCorSap()">
+              <button class="btn" type="button" name="cores" ng-click="selectSap('Amarelo ')">Amarelo</button>
+              <button class="btn" type="button" name="cores" ng-click="selectSap('Azul ')">Azul</button>
+              <button class="btn" type="button" name="cores" ng-click="selectSap('Rosa ')">Rosa</button>
+              <button class="btn" type="button" name="cores" ng-click="selectSap('Roxo ')">Roxo</button>
+              <button class="btn" type="button" name="cores" ng-click="selectSap('Vermelho ')">Vermelho</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+          <div class="c-a trying" ng-show="colAcessorios">
+            <form class="flexando" ng-submit="selCorAce()">
+              <button class="btn" type="button" name="cores" ng-click="selectAce('Amarelo ')">Amarelo</button>
+              <button class="btn" type="button" name="cores" ng-click="selectAce('Azul ')">Azul</button>
+              <button class="btn" type="button" name="cores" ng-click="selectAce('Rosa ')">Rosa</button>
+              <button class="btn" type="button" name="cores" ng-click="selectAce('Roxo ')">Roxo</button>
+              <button class="btn" type="button" name="cores" ng-click="selectAce('Vermelho ')">Vermelho</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+          <div class="t-r trying" ng-show="sRoupas">
+            <form class="flexando" ng-submit="selSizeRou()">
+              <button class="btn" type="button" name="tamanhos" ng-click="selectRou('PP/36 ')">PP/36</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectRou('P/38 ')">P/38</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectRou('M/40 ')">M/40</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectRou('G/42 ')">G/42</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectRou('GG/44 ')">GG/44</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+          <div class="t-s trying" ng-show="sSapatos">
+            <form class="flexando" ng-submit="selSizeSap()">
+              <button class="btn" type="button" name="tamanhos" ng-click="selectSap('34 ')">34</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectSap('35 ')">35</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectSap('36 ')">36</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectSap('37 ')">37</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectSap('38 ')">38</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectSap('39 ')">39</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+          <div class="t-a trying" ng-show="sAcessorios">
+            <form class="flexando" ng-submit="selSizeAce()">
+              <button class="btn" type="button" name="tamanhos" ng-click="selectAce('P ')">P</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectAce('M ')">M</button>
+              <button class="btn" type="button" name="tamanhos" ng-click="selectAce('G ')">G</button>
+              <input class="but" type="submit" name="Enviar" value="Enviar">
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-3 teste6" align="center"><a href="linksite"><button class="btn redirect" type="button" name="button">Ir direto para a página</button></a></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
