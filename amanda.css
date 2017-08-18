@@ -63,7 +63,7 @@
   color: white;
   border: 1px solid white;
   border-radius: 5px;
-  height: 40px;
+  height: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .topsite{
-  background-color: white;
+  background-color: black;
   height:150px;
   position: fixed;
   top: 0;
@@ -140,10 +140,6 @@
   height: 100px;
 }
 
-.thisone{
-  background-color: white;
-}
-
 .irsite{
   height:150px;
   position: fixed;
@@ -152,7 +148,7 @@
   margin: 0;
 }
 
-.row{
+.wide{
   padding: 0;
   margin: 0;
 }
